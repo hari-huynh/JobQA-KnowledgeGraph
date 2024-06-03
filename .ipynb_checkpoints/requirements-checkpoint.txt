@@ -1,6 +1,0 @@
-webdriver-manager 
-selenium
-json
-urllib
-beautifulsoup4
-argparse
