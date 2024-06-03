@@ -4,7 +4,7 @@
 
 ## 0. Clone github repo
 ```bash
-git clone 
+git clone https://github.com/hari-huynh/MultiHop-QA-KnowledgeGraph.git
 ```
 
 ## 1. Install requirements
