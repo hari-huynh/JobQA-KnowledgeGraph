@@ -1,4 +1,6 @@
-# MultiHop-QA-KnowledgeGraph
+<h1 align="center"><b>MultiHop-QA-KnowledgeGraph</b></h1>
+
+<h3 align="center"><b>HCMUS - NLP Group Project - Semester II/2023-2024</b></h3>
 
 ## 0. Clone github repo
 ```bash
@@ -14,11 +16,6 @@ pip install requirements.txt
 ```bash
 python scrape_jd.py --url "https://vn.indeed.com/jobs" --job "Artificial Intelligence" --loc "Thành phố Hồ Chí Minh"
 ```
-=======
-<h1 align="center"><b>MultiHop-QA-KnowledgeGraph</b></h1>
-
-<h3 align="center"><b>HCMUS - NLP Group Project - Semester II/2023-2024</b></h3>
-
 
 ### **Contributors**
 <table>
@@ -46,4 +43,3 @@ python scrape_jd.py --url "https://vn.indeed.com/jobs" --job "Artificial Intelli
     </td>
 </tr>
 </table>
->>>>>>> 83e78c293e1db1ead4b098706c2dd06bea278e07
