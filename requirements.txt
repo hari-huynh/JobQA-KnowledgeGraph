@@ -4,3 +4,6 @@ json
 urllib
 beautifulsoup4
 argparse
+pdf2image
+python-dotenv
+google-generativeai
