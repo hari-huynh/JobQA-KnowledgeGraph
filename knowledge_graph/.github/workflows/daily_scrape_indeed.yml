@@ -1,0 +1,48 @@
+name: Scrape Job Postings from Indeed
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * *'
+  
+jobs:
+  indeed-scrape:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repo content
+        uses: actions/checkout@v2   # checkout the repository content to github runner
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'  # install the python version needed
+
+      - name: Install Edge browser
+        uses: browser-actions/setup-edge@v1
+
+      - name: Install requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Pull latest changes
+        run: git pull origin main
+
+      - name: Execute Python script
+        run: python scrape_jd.py --job "Artificial Intelligence" --loc "Thành phố Hồ Chí Minh"
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+

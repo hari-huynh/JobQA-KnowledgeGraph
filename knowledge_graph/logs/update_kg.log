@@ -1,0 +1,80 @@
+2024-06-12 16:19:49,942 - INFO - Added Research Scientist in Machine Learning @ VinAI to Knowledge Graph.
+2024-06-12 16:19:58,040 - INFO - Added AI ENGINEER @ Nexcel Solutions to Knowledge Graph.
+2024-06-12 16:20:10,710 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-12 16:20:14,239 - INFO - Added Server Assembly Technician (Hardware/Electronics) @ East Agile to Knowledge Graph.
+2024-06-12 16:20:22,337 - INFO - Added Digital AI Engineer @ VIB to Knowledge Graph.
+2024-06-12 16:20:31,959 - INFO - Added Sr/Jr AI Engineer (Prompt Engineer Open AI)) @ Silicon Prime Labs to Knowledge Graph.
+2024-06-12 16:20:38,150 - INFO - Added Machine Learning Researcher @ Upskills Consultancy Services to Knowledge Graph.
+2024-06-12 16:20:42,870 - INFO - Added SENIOR RESEARCH SCIENTIST @ FPT to Knowledge Graph.
+2024-06-12 16:20:44,578 - INFO - Added Sales Support Analyzer @ Yokogawa to Knowledge Graph.
+2024-06-12 16:20:50,620 - INFO - Added AI Video Enhancement Algorithm Engineer @ CÔNG NGHỆ PUWELL CLOUD to Knowledge Graph.
+2024-06-12 16:21:09,069 - INFO - 1 validation error for JobKnowledgeGraph
+  Invalid JSON: trailing characters at line 1 column 2339 [type=json_invalid, input_value='{"job": {"description": ... POLICY", "NO OT"]}}}]}', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.7/v/json_invalid
+2024-06-12 16:21:26,980 - INFO - Added Senior Data Analyst (SQL,Python) @ Simple Tech Investment to Knowledge Graph.
+2024-06-12 16:21:30,923 - INFO - Added Indoor Sales Engineer @ Yokogawa to Knowledge Graph.
+2024-06-12 16:21:41,781 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-12 16:21:58,594 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-12 16:22:20,698 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-12 16:22:26,127 - INFO - Added Senior Machine Learning Engineer @ EPAM Systems to Knowledge Graph.
+2024-06-12 16:22:45,904 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-12 16:22:52,401 - INFO - Added APAC Digital Marketing Specialist @ GFT Technologies SE to Knowledge Graph.
+2024-06-12 16:22:59,869 - INFO - Added Scrum Master @ GFT Technologies SE to Knowledge Graph.
+2024-06-12 16:23:04,426 - INFO - Added Startup Account Manager, Vietnam @ Amazon Web Services Vietnam Company Limited to Knowledge Graph.
+2024-06-12 16:23:25,460 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-12 16:23:36,914 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-12 16:23:50,233 - INFO - Added Senior/Staff Design Verification Engineer @ Synopsys to Knowledge Graph.
+2024-06-12 16:23:58,034 - INFO - Added Senior Java Developer @ VSL Software to Knowledge Graph.
+2024-06-12 16:24:00,950 - INFO - Added CRM Data and Analytics Manager @ HSBC to Knowledge Graph.
+2024-06-12 16:24:06,079 - INFO - Added Principal Design Verification Engineer @ Synopsys to Knowledge Graph.
+2024-06-12 16:24:31,808 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-12 16:28:01,108 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-12 16:28:10,361 - INFO - Added Senior Manager, Digital Innovation and Library Systems @ RMIT University to Knowledge Graph.
+2024-06-12 16:28:18,111 - INFO - Added ML Engineer - Enterprise Artificial Intelligence @ Renesas Electronics to Knowledge Graph.
+2024-06-12 16:28:21,920 - INFO - Added iOS Developer - Freelancer, Remote, Flex-time, 20+ hours/week @ OpenTrain AI to Knowledge Graph.
+2024-06-12 16:28:26,244 - INFO - Added Sale Executive @ Halocom Digital - Advertising Agency to Knowledge Graph.
+2024-06-12 16:28:39,886 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-12 16:29:03,128 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-12 16:29:17,137 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-12 16:29:17,680 - INFO - {'countNodes': 725}
+2024-06-12 16:29:17,681 - INFO - {'countRelationships': 1403}
+2024-06-13 01:21:26,553 - INFO - Added Sr/Jr AI Engineer (Prompt Engineer Open AI)) @ Silicon Prime Labs to Knowledge Graph.
+2024-06-13 01:21:35,202 - INFO - Added AI ENGINEER @ Nexcel Solutions to Knowledge Graph.
+2024-06-13 01:21:38,410 - INFO - Added Server Assembly Technician (Hardware/Electronics) @ East Agile to Knowledge Graph.
+2024-06-13 01:21:43,579 - INFO - Added SENIOR RESEARCH SCIENTIST @ FPT to Knowledge Graph.
+2024-06-13 01:21:50,358 - INFO - Added Machine Learning Researcher @ Upskills Consultancy Services to Knowledge Graph.
+2024-06-13 01:21:54,774 - INFO - Added Research Scientist in Machine Learning @ VinAI to Knowledge Graph.
+2024-06-13 01:22:13,189 - INFO - 1 validation error for JobKnowledgeGraph
+  Invalid JSON: trailing characters at line 1 column 2339 [type=json_invalid, input_value='{"job": {"description": ... POLICY", "NO OT"]}}}]}', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.7/v/json_invalid
+2024-06-13 01:22:21,463 - INFO - Added Digital AI Engineer @ VIB to Knowledge Graph.
+2024-06-13 01:22:23,371 - INFO - Added Sales Support Analyzer @ Yokogawa to Knowledge Graph.
+2024-06-13 01:22:27,417 - INFO - Added Indoor Sales Engineer @ Yokogawa to Knowledge Graph.
+2024-06-13 01:22:47,641 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-13 01:22:58,972 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-13 01:23:05,585 - INFO - Added AI Video Enhancement Algorithm Engineer @ CÔNG NGHỆ PUWELL CLOUD to Knowledge Graph.
+2024-06-13 01:23:24,597 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-13 01:23:31,865 - INFO - Added APAC Digital Marketing Specialist @ GFT Technologies SE to Knowledge Graph.
+2024-06-13 01:23:37,708 - INFO - Added Senior Machine Learning Engineer @ EPAM Systems to Knowledge Graph.
+2024-06-13 01:23:56,814 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-13 01:24:10,766 - INFO - Added Scrum Master @ GFT Technologies SE to Knowledge Graph.
+2024-06-13 01:24:21,024 - INFO - Added Senior Manager, Digital Innovation and Library Systems @ RMIT University to Knowledge Graph.
+2024-06-13 01:24:40,925 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-13 01:24:54,547 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-13 01:24:59,109 - INFO - Added Startup Account Manager, Vietnam @ Amazon Web Services Vietnam Company Limited to Knowledge Graph.
+2024-06-13 01:25:02,971 - INFO - Added CRM Data and Analytics Manager @ HSBC to Knowledge Graph.
+2024-06-13 01:25:14,695 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-13 01:25:27,004 - INFO - Added Senior/Staff Design Verification Engineer @ Synopsys to Knowledge Graph.
+2024-06-13 01:25:32,049 - INFO - Added Principal Design Verification Engineer @ Synopsys to Knowledge Graph.
+2024-06-13 01:25:50,198 - INFO - Added Senior Data Analyst (SQL,Python) @ Simple Tech Investment to Knowledge Graph.
+2024-06-13 01:25:58,837 - INFO - Added Senior Java Developer @ VSL Software to Knowledge Graph.
+2024-06-13 01:29:31,454 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-13 01:29:57,173 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-13 01:30:05,080 - INFO - Added ML Engineer - Enterprise Artificial Intelligence @ Renesas Electronics to Knowledge Graph.
+2024-06-13 01:30:09,023 - INFO - Added iOS Developer - Freelancer, Remote, Flex-time, 20+ hours/week @ OpenTrain AI to Knowledge Graph.
+2024-06-13 01:30:31,837 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-13 01:30:36,821 - INFO - Added Sale Executive @ Halocom Digital - Advertising Agency to Knowledge Graph.
+2024-06-13 01:30:52,884 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-13 01:31:06,636 - INFO - 'GenerateContentResponse' object has no attribute 'result'
+2024-06-13 01:31:07,363 - INFO - {'countNodes': 813}
+2024-06-13 01:31:07,363 - INFO - {'countRelationships': 1948}

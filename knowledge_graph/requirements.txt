@@ -1,0 +1,9 @@
+﻿webdriver-manager
+selenium
+beautifulsoup4
+argparse
+google-generativeai
+instructor
+neo4j
+langchain_community
+python-dotenv
