@@ -8,6 +8,8 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 from langchain.schema.output_parser import StrOutputParser
+from langchain.tools import BaseTool, StructuredTool, tool
+from langchain_community.graphs import Neo4jGraph
 # from utils import utils
 
 
@@ -29,7 +31,7 @@ example_selector = SemanticSimilarityExampleSelector.from_examples(
     examples = examples,
     embeddings = embedding_model,
     vectorstore_cls = FAISS,
-    k = 3
+    k = 1
 )
 
 # Load schema, prefix, suffix
@@ -79,7 +81,6 @@ def generate_cypher(question: str) -> str:
 
 def run_cypher(cypher_statement: str) -> str:
     """Return result of Cypher query from Knowledge Graph."""
-    config()
     knowledge_graph = Neo4jGraph()
     result = knowledge_graph.query(cypher_statement)
 
@@ -87,7 +88,6 @@ def run_cypher(cypher_statement: str) -> str:
         model= "gemini-1.5-flash-latest"
     )
 
-    print(result)
     answer_prompt = f"""
     Generate a concise and informative summary of the results in a polite and easy-to-understand manner based on Cypher query response.
     Response: {str(result)}
@@ -102,15 +102,37 @@ def run_cypher(cypher_statement: str) -> str:
         HumanMessage(content="Provide information about question from knowledge graph")
     ]
 
-    response = gemini_chat(sys_answer_prompt)
+    response = gemini_chat.invoke(sys_answer_prompt)
     answer = response.content
     return answer
 
+@tool
+def lookup_kg(question: str) -> str:
+    """Based on question, make and run Cypher statements."""
+    cypher_statement = generate_cypher(question)
+    cypher_statement = cypher_statement.replace("cypher", "").replace("```", "").strip()
+
+    try:
+        answer = run_cypher(cypher_statement)
+    except:
+        answer = "Knowledge graph doesn't have enough information"
+
+    return answer
+
+
 if __name__ == "__main__":
+    question = "Have any company is recruiting Machine Learning jobs?"
+
     # Test few-shot template
     # print(dynamic_prompt.format(question = "What does the Software Engineer job usually require?"))
 
-    # Test generate Cypher
-    question = "Have any company is recruiting Machine Learning jobs?"
-    result = generate_cypher(question)
-    print(result)
+    # # Test generate Cypher
+    # result = generate_cypher(question)
+
+    # # Test return information from Cypher
+    # final_result = run_cypher(result)
+    # print(final_result)
+
+    # Test lookup_kg tool
+    kg_info = lookup_kg.invoke(question)
+    print(kg_info)
