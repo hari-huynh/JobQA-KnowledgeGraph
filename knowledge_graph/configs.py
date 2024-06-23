@@ -1,11 +1,10 @@
 import google.generativeai as genai
 from google.generativeai.types import GenerationConfig
+from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from langchain_community.graphs import Neo4jGraph
 import instructor
 import os
 from dotenv import load_dotenv
-
-
 
 config = GenerationConfig(
     temperature=0,
@@ -13,6 +12,12 @@ config = GenerationConfig(
     # stop_sequences=["<|endoftext|>"]  # Optional: Stop generation at these sequences
 )
 
+safety_settings = {
+    HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+    HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+    HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+    HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE
+}
 
 def configure_setup():
     load_dotenv()
@@ -32,9 +37,10 @@ def configure_setup():
     client = instructor.from_gemini(
         client=genai.GenerativeModel(
             model_name="models/gemini-1.5-flash-latest",
-            generation_config= config# model defaults to "gemini-pro"
+            generation_config = config,
+            safety_settings = safety_settings # model defaults to "gemini-pro"
         ),
-        mode=instructor.Mode.GEMINI_JSON,
+        mode = instructor.Mode.GEMINI_JSON,
     )
 
     return neo4j_graph, client

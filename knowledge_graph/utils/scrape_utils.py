@@ -3,7 +3,8 @@ import re
 import time
 import urllib
 import json
-import datetime
+import datetime as dt
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.edge.options import Options
@@ -11,7 +12,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
-
 
 class IndeedScraper:
     def __init__(self, logger):
@@ -45,14 +45,18 @@ class IndeedScraper:
         """
         Extract Job Description text
         """
-        time.sleep(2)
+        time.sleep(3)
 
         # Job title
         job_title_raw = self.driver.find_element(By.XPATH, '//h2[@data-testid="jobsearch-JobInfoHeader-title"]/span')
         job_title = job_title_raw.text.replace("- job post", "").strip()
 
         # Company name
-        company_name = self.driver.find_element(By.XPATH, '//div[@data-testid="inlineHeader-companyName"]/span/a').text
+        try:
+            company_name = self.driver.find_element(By.XPATH, '//div[@data-testid="inlineHeader-companyName"]/span/a').text
+        except NoSuchElementException:
+            company_name = self.driver.find_element(By.XPATH, '//div[@data-testid="inlineHeader-companyName"]/span').text
+
 
         # Location
         location = self.driver.find_element(By.XPATH, '//div[@data-testid="inlineHeader-companyLocation"]/div').text
@@ -101,8 +105,22 @@ class IndeedScraper:
             job_infors = self.driver.find_elements(By.XPATH, '//div[@class="job_seen_beacon"]')
 
             for job_info in job_infors:
-                job_info.click()
+                # Date posted
+                today = datetime.today()
+                date_post = job_info.find_element(By.XPATH, './/span[@data-testid="myJobsStateDate"]').text
 
+                if "30+" in date_post:
+                    posted_date_str = "Before " + (today - timedelta(30)).strftime('%Y-%m-%d')
+                else:
+                    date_post_ = re.sub(r'\D', '', date_post)
+                    if date_post_ != "":
+                        posted_date = today - timedelta(days=int(date_post_))
+                        posted_date_str = posted_date.strftime('%Y-%m-%d')
+                    else:
+                        posted_date_str = today.strftime('%Y-%m-%d')
+
+
+                job_info.click()
                 job_title, company_name, full_jd, num_token = self.extract_one_jd()
 
                 # If job doesn't exists, add to dictionary
@@ -116,7 +134,8 @@ class IndeedScraper:
                         "title": job_title,
                         "company": company_name,
                         "jd_text": full_jd,
-                        "jd_num_tokens": num_token
+                        "num_tokens": num_token,
+                        "date_posted": posted_date_str
                     }
 
                 print("({}) Processed ...... {} @ {}".format(job_id, job_title, company_name))
@@ -137,10 +156,19 @@ class IndeedScraper:
 def save_job_desc(jd_dict, keyword):
     directory = './job_posts_data'
 
-    today = str(datetime.date.today())
+    today = str(dt.date.today())
     filename = f"{directory}/job_posts_{keyword}_{today}.json"
 
     json_file = json.dumps(jd_dict, indent=4, ensure_ascii=False)
 
     with open(filename, "w", encoding="utf-8") as f:
         f.write(json_file)
+
+def read_job_desc(filename):
+    DATA_DIR = "job_posts_data"
+    filepath = f"{DATA_DIR}/{filename}"
+    with open(filepath, "r", encoding="utf-8") as file:
+        job_desc = json.load(file)
+
+    return job_desc
+

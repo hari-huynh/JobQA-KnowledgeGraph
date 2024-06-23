@@ -1,10 +1,22 @@
-def add_job_nodes(response, job_name):
+import os
+def add_job_nodes(response, job_name, date_posted):
     job = response.job
+
+    if "Before" in date_posted:
+        date_posted = date_posted.split()[1]
 
     # Create job nodes
     cypher = f'''
     CREATE (job:Job {{name: "{job_name}"}})
+    SET job.status = "Opening"
+    SET job.date_posted = date("{date_posted}")
     '''
+
+    # Work Levels
+    if job.work_level:
+        cypher += f'''
+        SET job.workLevel = "{job.work_level}"
+        '''
 
     # Job description
     if job.description:
@@ -13,27 +25,20 @@ def add_job_nodes(response, job_name):
     # Work mode
     if job.work_mode:
         cypher += f'''
-        SET job.work_mode = "{job.work_mode}"
+        SET job.workMode = "{job.work_mode}"
         '''
 
     # Benefits & Compensations
     if job.benefit_compensation:
         cypher += f'''
-        SET job.benefit_compensation = "{job.benefit_compensation}"
+        SET job.benefitCompensation = "{job.benefit_compensation}"
         '''
 
     # Locations
     if job.work_at:
         cypher += f'''
-    MERGE (loc: Location {{name: "{job.work_at.name}", location_type: "{job.work_at.location_type}"}})
+    MERGE (loc: Location {{name: "{job.work_at.name}", locationType: "{job.work_at.location_type}"}})
     MERGE (job)-[:WORK_AT]->(loc)
-    '''
-
-    # Work Levels
-    if job.work_level:
-        cypher += f'''
-    MERGE (level: Work_LV {{name: "{job.work_level.name}"}})
-    MERGE (job)-[:AT_LEVEL]->(level)
     '''
 
     # Required educations
@@ -83,41 +88,48 @@ def add_company_nodes(response, company_name):
     cypher = f'''
     MERGE (company:Company {{name: "{company_name}"}})
     MERGE (job)-[:FROM]->(company)
-    MERGE (company)-[:RECRUITES]->(job)
+    MERGE (company)-[:RECRUITS]->(job)
         '''
 
     if company:
-        if company.subdiaries:
-            for i, sub in enumerate(company.subdiaries):
-                cypher += f'''
-            MERGE (sub_{i}:Company {{name: "{sub}"}})
-            MERGE (company)-[:SUBDIARY]->(sub_{i})
-                '''
-
         if company.locations:
             for i, loc in enumerate(company.locations):
                 cypher += f'''
             MERGE (loc_{i}:Location {{name: "{loc.name}"}})
-            MERGE (company)-[:LOCATES_IN]->(loc_{i})
+            MERGE (company)-[:LOCATED_IN]->(loc_{i})
                 '''
 
                 if loc.location_type:
-                    cypher += f'SET loc_{i}.location_type = "{loc.location_type}"'
+                    cypher += f'SET loc_{i}.locationType = "{loc.location_type}"'
 
         if company.industry:
             for i, industry in enumerate(company.industry):
                 cypher += f'''
             MERGE (industry_{i}:Industry {{name: "{industry}"}})
-            MERGE (company)-[:OPERATES_IN]->(industry_{i})
+            MERGE (company)-[:OPERATED_IN]->(industry_{i})
                 '''
 
     return cypher
 
-
-def make_cypher_query(response, job_title, company_name):
-    job_cypher = add_job_nodes(response, job_title)
+def add_jobs2kg(response, job_title, company_name, date_posted):
+    job_cypher = add_job_nodes(response, job_title, date_posted)
     company_cypher = add_company_nodes(response, company_name)
     return job_cypher + company_cypher
 
+def update_job_status(job_list):
+    update_cypher = ""
+    for job in job_list:
+        job_title, company = job["title"], job["company"]
+        update_cypher += f"""
+        MATCH (j:Job {{name: "{job_title}"}})-[:FROM]->(c:Company {{name: "{company}"}})
+        SET j.status = "Closed"
+        """
+
+    return update_cypher
+
+if __name__ == "__main__":
+    pass
+    # _, closed_jobs = manage_jobs()
+    # print(update_job_status(closed_jobs))
 
 
