@@ -17,6 +17,8 @@ def config():
     os.environ["NEO4J_USERNAME"] = os.getenv("NEO4J_USERNAME")
     os.environ["NEO4J_PASSWORD"] = os.getenv("NEO4J_PASSWORD")
     os.environ["GOOGLE_API_KEY"] = os.getenv("GEMINI_API_KEY")
+    os.environ["TAVILY_API_KEY"] = os.getenv("TAVILY_API_KEY")
+
 
 def load_prompt(filepath):
     with open(filepath, "r") as file:

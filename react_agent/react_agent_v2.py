@@ -9,9 +9,11 @@ from langchain.agents.output_parsers import ReActSingleInputOutputParser
 from langchain.tools.render import render_text_description
 import os
 from tools.kg_search import lookup_kg
+from tools.search_tavily import tavily_search
 from dotenv import load_dotenv
 from langchain.agents import Tool
 from langchain_core.prompts import PromptTemplate
+
 
 load_dotenv()
 os.environ["GOOGLE_API_KEY"] = os.getenv("GEMINI_API_KEY")
@@ -34,7 +36,7 @@ kg_query = Tool(
 )
 
 
-tools = [kg_query]
+tools = [kg_query,tavily_search]
 # memory = ConversationBufferMemory(memory_key="chat_history")
 #
 # agent_chain = initialize_agent(tools,
