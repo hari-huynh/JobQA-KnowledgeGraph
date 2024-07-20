@@ -2,6 +2,15 @@
 
 <h3 align="center"><b>HCMUS - NLP Group Project - Semester II/2023-2024</b></h3>
 
+
+## Table of Contents
+- Introduction
+- Usage
+- Key Features
+- How to Use
+- References
+- Tech Stack
+
 ## 0. Clone github repo
 ```bash
 git clone https://github.com/hari-huynh/MultiHop-QA-KnowledgeGraph.git
