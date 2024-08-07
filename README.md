@@ -1,30 +1,75 @@
-<h1 align="center"><b>MultiHop-QA-KnowledgeGraph</b></h1>
+<h1 align="center"><b>MultiHop Question Answering with KnowledgeGraph</b></h1>
 
 <h3 align="center"><b>HCMUS - NLP Group Project - Semester II/2023-2024</b></h3>
 
 
 ## Table of Contents
-- Introduction
-- Usage
-- Key Features
-- How to Use
-- References
-- Tech Stack
+- [Introduction](#introduction)
+- [Usage](#usage)
+    - Clone the github repo
+    - Install requirements
+- [Components](#components)
+- [Key Features](#key-features)
+- [How to Use](#how-to-use)
+- [References](#references)
+- [Tech Stack](#tech-stack)
 
-## 0. Clone github repo
+## Introduction
+This project aims to develop a question answering system that can provide comprehensive and informative responses to queries related job postings. The core component of this system is a knowledge graph meticulously constructed from a vast amount of job postings. This knowledge graph serves as a robust Retrieval Augmented Generation (RAG) engine, enabling an advanced language model to effectively extract and process relevant information.
+
+
+## Usage
+### Clone the github repo
 ```bash
 git clone https://github.com/hari-huynh/MultiHop-QA-KnowledgeGraph.git
 ```
 
-## 1. Install requirements
+### Install requirements
 ```bash
 pip install requirements.txt
 ```
+### Scrape job posts from Indeed
+The knowledge graph is constructed from job posts scraped from Indeed. To scrape job post information from Indeed, use the following code:
+```bash
+cd knowledge_graph
+python scrape_jd.py --url "indeed-url-for-scraping" --job "role-that-you-want-to-scrape" --loc "the-location"
+```
 
-## Folder `scrape_indeed`
+Example:
 ```bash
 python scrape_jd.py --url "https://vn.indeed.com/jobs" --job "Artificial Intelligence" --loc "Thành phố Hồ Chí Minh"
 ```
+The result will be a JSON file containing several job posts and the corresponding information, such as titles, company names and job descriptions. See examples in the ```job_posts_data``` inside ```knowledge_graph``` folder.
+
+### Construct & Update Knowledge Graph
+```bash
+python update_kg.py
+```
+This will create a knowledge graph with a predefined schema (If the knowledge graph hasn't been created yet) or update the knowledge graph with new data.
+
+
+### QA with LLM
+After having a knowledge graph filled with job post information, you can now start asking about job post related questions.
+```bash
+cd react_agent
+python main.py
+```
+
+## Components
+### Data Collection
+![Data Collection Module](images/data_collection_module.png?raw=True)
+### Knowledge Graph Maintenance
+![Knowledge Graph Module](images/knowledge_graph_module.png?raw=True)
+### Inference
+![Inference Module](images/inference_module.png?raw=True)
+## Key Features
+
+## How to Use
+
+## References
+
+## Tech Stack
+
 
 ### **Contributors**
 <table>
