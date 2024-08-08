@@ -73,11 +73,20 @@ This module acts as an information processor. It extracts entities and relations
 This module is responsible for generating responses to user's queries. A ReAct agent with 2 tools (Knowledge Graph Search and Tavily Search) is the core of this module.
 
 ![Inference Module](images/inference_module.png?raw=True)
+
+
+
 ## Key Features
 
 ## References
 
 ## Tech Stack
+<div align="center">
+  <a href="https://github-readme-tech-stack.vercel.app">
+<img src="https://tinyurl.com/ranewr2c" alt="GitHub Readme Tech Stack" />
+  </a>
+</div>
+
 
 ## **Contributors**
 <table>
