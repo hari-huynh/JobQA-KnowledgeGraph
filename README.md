@@ -2,34 +2,37 @@
 
 <h3 align="center"><b>HCMUS - NLP Group Project - Semester II/2023-2024</b></h3>
 
+<p align="center"> 
+  <img src="images/knowledge-graph-animation.gif" alt="Sample signal" width="70%" height="10%">
+</p>
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Usage](#usage)
+## :book: **Table of Contents**
+- [Introduction](#pencil-introduction)
+- [Usage](#fork_and_knife-usage)
     - [Clone the github repo](#clone-the-github-repo)
     - [Install requirements](#install-requirements)
     - [Scrape job posts from Indeed](#scrape-job-posts-from-indeed)
     - [Construct & Update Knowledge Graph](#construct--update-knowledge-graph)
     - [QA with LLM](#qa-with-llm)
-- [Components](#components)
+- [Components](#package-components)
     - [Data Collection Module](#data-collection-module)
     - [Knowledge Graph Module](#knowledge-graph-module)
     - [Inference Module](#inference-module)
-- [Key Features](#key-features)
-- [References](#references)
-- [Tech Stack](#tech-stack)
+- [Key Features](#key-key-features)
+- [References](#books-references)
+- [Tech Stack](#hammer_and_wrench-tech-stack)
 
-## Introduction
+## :pencil: Introduction 
 This project aims to develop a question answering system that can provide comprehensive and informative responses to queries related job postings. The core component of this system is a knowledge graph meticulously constructed from a vast amount of job postings. This knowledge graph serves as a robust Retrieval Augmented Generation (RAG) engine, enabling an advanced language model to effectively extract and process relevant information.
 
 
-## Usage
-### Clone the github repo
+## :fork_and_knife: Usage
+###  Clone the github repo
 ```bash
 git clone https://github.com/hari-huynh/MultiHop-QA-KnowledgeGraph.git
 ```
 
-### Install requirements
+###  Install requirements
 ```bash
 pip install requirements.txt
 ```
@@ -60,7 +63,7 @@ cd react_agent
 python main.py
 ```
 
-## Components
+## :package: Components
 ### Data Collection Module
 This module is responsible for automaticaly scraping and collecting job post data on a daily basis.
 
@@ -76,11 +79,20 @@ This module is responsible for generating responses to user's queries. A ReAct a
 
 
 
-## Key Features
+## :key: **Key Features**
 
-## References
+## :books: **References**
+[1] Lewis, Patrick, et al. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." ArXiv, 2020,  /abs/2005.11401. Accessed 3 Jul. 2024. [https://ar5iv.labs.arxiv.org/html/2005.11401]
 
-## Tech Stack
+[2] Hogan, Aidan, et al. "Knowledge Graphs." ArXiv, 2020,  https://doi.org/10.1145/3447772. Accessed 3 Jul. 2024.
+
+[3] Yao, Shunyu, et al. "ReAct: Synergizing Reasoning and Acting in Language Models." ArXiv, 2022,  /abs/2210.03629. Accessed 3 Jul. 2024. [https://arxiv.org/abs/2210.03629]
+
+[4] Team, Gemini, et al. "Gemini: A Family of Highly Capable Multimodal Models." ArXiv, 2023,  /abs/2312.11805. Accessed 3 Jul. 2024. [https://arxiv.org/abs/2312.11805]
+
+[5] https://www.superannotate.com/blog/llm-agents
+
+## :hammer_and_wrench:  **Tech Stack**
 <div align="center">
   <a href="https://github-readme-tech-stack.vercel.app">
 <img src="https://tinyurl.com/ranewr2c" alt="GitHub Readme Tech Stack" />
@@ -88,7 +100,7 @@ This module is responsible for generating responses to user's queries. A ReAct a
 </div>
 
 
-## **Contributors**
+## :handshake:  **Contributors**
 <table>
 <tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
