@@ -21,6 +21,7 @@
 - [Key Features](#key-key-features)
 - [References](#books-references)
 - [Tech Stack](#hammer_and_wrench-tech-stack)
+- [Hugging Face Space](#hugs-hugging-face-space)
 
 ## :pencil: Introduction 
 This project aims to develop a question answering system that can provide comprehensive and informative responses to queries related job postings. The core component of this system is a knowledge graph meticulously constructed from a vast amount of job postings. This knowledge graph serves as a robust Retrieval Augmented Generation (RAG) engine, enabling an advanced language model to effectively extract and process relevant information.
@@ -98,6 +99,10 @@ This module is responsible for generating responses to user's queries. A ReAct a
 <img src="https://tinyurl.com/ranewr2c" alt="GitHub Readme Tech Stack" />
   </a>
 </div>
+
+## :hugs: Hugging Face Space
+[![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Space-yellow)]([https://huggingface.co/spaces/your-space-name](https://huggingface.co/spaces/haihuynh/Job-KnowledgeGraph-QA))
+
 
 
 ## :handshake:  **Contributors**
