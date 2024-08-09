@@ -82,6 +82,14 @@ This module is responsible for generating responses to user's queries. A ReAct a
 
 ## :key: **Key Features**
 
+- Ask and answer detailed information about available jobs both within and outside the knowledge base: required skills, experience, etc.
+
+- Ask and answer information about the company: position, field, etc.
+
+- Ask and answer reasoning related to job information.
+
+- Suggest suitable jobs.
+
 ## :books: **References**
 [1] Lewis, Patrick, et al. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." ArXiv, 2020,  /abs/2005.11401. Accessed 3 Jul. 2024. [https://ar5iv.labs.arxiv.org/html/2005.11401]
 
