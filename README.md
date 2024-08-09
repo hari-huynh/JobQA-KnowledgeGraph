@@ -101,7 +101,7 @@ This module is responsible for generating responses to user's queries. A ReAct a
 </div>
 
 ## :hugs: Hugging Face Space
-[![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Space-yellow)]([https://huggingface.co/spaces/your-space-name](https://huggingface.co/spaces/haihuynh/Job-KnowledgeGraph-QA))
+[![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Space-yellow)](https://huggingface.co/spaces/haihuynh/Job-KnowledgeGraph-QA)
 
 
 
