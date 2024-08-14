@@ -1,4 +1,4 @@
-<h1 align="center"><b>MultiHop Question Answering with KnowledgeGraph</b></h1>
+<h1 align="center"><b>Knowledge Graph-Powered Job Post Question Answering System</b></h1>
 
 <h3 align="center"><b>HCMUS - NLP Group Project - Semester II/2023-2024</b></h3>
 
