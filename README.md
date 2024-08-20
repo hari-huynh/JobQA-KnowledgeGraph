@@ -1,6 +1,11 @@
 <h1 align="center"><b>Knowledge Graph-Powered Job Post Question Answering System</b></h1>
-
 <h3 align="center"><b>HCMUS - NLP Group Project - Semester II/2023-2024</b></h3>
+
+<h5 align="center">
+  
+  [![hf_space](https://img.shields.io/badge/🤗-HuggingFace%20Spaces-blue.svg)](https://huggingface.co/spaces/haihuynh/Job-KnowledgeGraph-QA)
+  
+</h5>
 
 <p align="center"> 
   <img src="images/knowledge-graph-animation.gif" alt="Sample signal" width="70%" height="10%">
@@ -21,8 +26,8 @@
 - [Key Features](#key-key-features)
 - [References](#books-references)
 - [Tech Stack](#hammer_and_wrench-tech-stack)
-- Demo
-- [Hugging Face Space](#hugs-hugging-face-space)
+- [Demo](#computer-demo)
+
 
 ## :pencil: Introduction 
 This project aims to develop a question answering system that can provide comprehensive and informative responses to queries related job postings. The core component of this system is a knowledge graph meticulously constructed from a vast amount of job postings. This knowledge graph serves as a robust Retrieval Augmented Generation (RAG) engine, enabling an advanced language model to effectively extract and process relevant information.
@@ -109,13 +114,8 @@ This module is responsible for generating responses to user's queries. A ReAct a
   </a>
 </div>
 
-## Demo
-![Video Demo](images/chatbot_demo.mp4)
-
-## :hugs: Hugging Face Space
-[![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Space-yellow)](https://huggingface.co/spaces/haihuynh/Job-KnowledgeGraph-QA)
-
-
+## :computer: Demo
+https://github.com/user-attachments/assets/ab38ee0e-3fc0-448f-96ae-346a2fbb6666
 
 ## :handshake:  **Contributors**
 <table>
