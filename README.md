@@ -21,6 +21,7 @@
 - [Key Features](#key-key-features)
 - [References](#books-references)
 - [Tech Stack](#hammer_and_wrench-tech-stack)
+- Demo
 - [Hugging Face Space](#hugs-hugging-face-space)
 
 ## :pencil: Introduction 
@@ -107,6 +108,9 @@ This module is responsible for generating responses to user's queries. A ReAct a
 <img src="https://tinyurl.com/ranewr2c" alt="GitHub Readme Tech Stack" />
   </a>
 </div>
+
+## Demo
+![Video Demo](images/chatbot_demo.mp4)
 
 ## :hugs: Hugging Face Space
 [![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Space-yellow)](https://huggingface.co/spaces/haihuynh/Job-KnowledgeGraph-QA)
